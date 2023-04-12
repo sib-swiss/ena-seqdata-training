@@ -1,9 +1,12 @@
-site_name: My site
+site_name: Raw Sequencing Data with ENA
 nav:
     - Home: index.md
     - Precourse preparations: precourse.md
     - Course schedule: course_schedule.md
-    - Exercises: exercises.md
+    - Introduction: introduction.md
+    - Finding and downloading: finding_downloading.md
+    - Submitting: submitting.md
+    - Webin CLI: webin_cli.md
 
 theme:
   name: material
@@ -11,8 +14,8 @@ theme:
   favicon: assets/images/SIB_logo.svg
 
 # Repository
-repo_name: sib-swiss/course_website_template
-repo_url: https://github.com/sib-swiss/course_website_template
+repo_name: sib-swiss/ena-seqdata-training
+repo_url: https://github.com/sib-swiss/ena-seqdata-training
 
 markdown_extensions:
   - abbr
@@ -27,7 +30,8 @@ markdown_extensions:
   - toc
   - pymdownx.superfences
   - attr_list
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true 
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
