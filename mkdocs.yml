@@ -3,10 +3,11 @@ nav:
     - Home: index.md
     - Precourse preparations: precourse.md
     - Course schedule: course_schedule.md
-    - Introduction: introduction.md
-    - Finding and downloading: finding_downloading.md
-    - Submitting: submitting.md
-    - Webin CLI: webin_cli.md
+    - Course content:
+      - Introduction: course_content/introduction.md
+      - Finding and downloading: course_content/finding_downloading.md
+      - Submitting: course_content/submitting.md
+      - Webin CLI: course_content/webin_cli.md
 
 theme:
   name: material

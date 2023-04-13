@@ -4,9 +4,9 @@ Our project **Genetic variation of listeria in the cow brain** has the aim to ga
 
 ## Exercises
 
-You are asked to submit the reads to EBI. First, figure out what the best submission strategy is at the [submission wizard](https://www.ebi.ac.uk/submission/). 
+You are asked to submit the reads to a repository EBI. First, figure out what the best submission strategy is at the [submission wizard](https://www.ebi.ac.uk/submission/). 
 
-??? done "Answer"
+??? success "Answer"
     After answering the questions, you probably conclude you should submit to [ENA](https://www.ebi.ac.uk/ena/browser/submit). 
 
 If you haven't already got one, make a [Webin account](https://www.ebi.ac.uk/ena/submit/webin/login). After the creation of the Webin account we will continue in the dev environment at [https://wwwdev.ebi.ac.uk/ena/browser/home](https://wwwdev.ebi.ac.uk/ena/browser/home). 
@@ -29,12 +29,12 @@ Go back to the [submission portal main page](https://wwwdev.ebi.ac.uk/ena/submit
 
 **Exercise**: What would be the most appropriate template for our project?
 
-??? done "Answer"
+??? success "Answer"
     *Listeria monocytogenes* is a pathogen, so as checklist group we select **Pathogens Checklists**. It is food-borne, so the first one **COMPARE-ECDC-EFSA pilot food-associated reporting standard** could be appropriate. However, we can't specify the host (cow) in there. So we choose the alternative: **ENA prokaryotic pathogen minimal sample checklist**. 
     
 **Exercise**: Check out all fields (including recommended and optional). Any field you want to add/remove? 
 
-??? done "Answer"
+??? success "Answer"
     We don't have information about where the samples were exactly collected, so we can uncheck `lat_lon` at 'Recommended fields'. We can also uncheck `strain` because we don't have any strain information. 
 
 **Exercise**: Now download the template as tsv, and edit it in e.g. excel for our two samples (LIS001 and LIS002). Do not change the first three lines. For your convenenience, keep the field description open, so you know what to fill out. 
@@ -42,8 +42,8 @@ Go back to the [submission portal main page](https://wwwdev.ebi.ac.uk/ena/submit
 !!! info "Hint"
     In order to find the taxonomy ID (`tax_id`), use [NCBI Taxonomy](https://www.ncbi.nlm.nih.gov/taxonomy) to find it. 
 
-??? done "Answer"
-    You can find an example of a 'correctly' filled out table [here](../assets/Checklist_samples.tsv).
+??? success "Answer"
+    You can find an example of a 'correctly' filled out table [here](../assets/tsv/Checklist_samples.tsv).
 
 ### 3. Upload reads
 
@@ -63,7 +63,7 @@ To upload the reads, create a new Site that connects to `ftp://webin2.ebi.ac.uk`
 - At **User** and **Password** specify your Webin username and password
 
 <figure>
-    <img src="../assets/images/filezilla_site_upload.png" width="500"/>
+    <img src="../../assets/images/filezilla_site_upload.png" width="500"/>
 </figure>
 
 After filling out the connection details, click **Connect** to connect to your personal space on the ftp server.
@@ -76,7 +76,7 @@ Go back to the [submission portal main page](https://wwwdev.ebi.ac.uk/ena/submit
 
 **Exercise** Check out the template choices. What would be the most appropriate template?
 
-??? done "Answer"
+??? success "Answer"
     We have paired fastq files, so we'll choose **Submit paired reads using two Fastq files**. 
 
 **Exercise**: Again check out the mandatory and optional fields. Any field you would like to add from **Optional Fields**?
@@ -84,7 +84,7 @@ Go back to the [submission portal main page](https://wwwdev.ebi.ac.uk/ena/submit
 !!! note "Check 'Show Description'"
     The descriptions do not show by default for the read submission template. View it by checking 'Show Description' at the top of the page. 
 
-??? done "Answer"
+??? success "Answer"
     No, probably nothing to add because we don't have that information. If you have this kind of info, don't hesitate to add it!
 
 You have probably seen the fields 'forward_file_md5' and 'reverse_file_md5'. md5 checksums are used to check whether the file transfer has completed completely without error. You can calculate them like this:
@@ -104,7 +104,7 @@ You have probably seen the fields 'forward_file_md5' and 'reverse_file_md5'. md5
 
 **Exercise**: download the template and fill out the required information. Check the field description and permitted values in the template description. 
 
-??? done "Answer"
+??? success "Answer"
     You can find a 'correctly' filled out table [here](../assets/tsv/fastq2_template.tsv). 
 
 Now you can upload the file at **Upload filled spreadsheet template for Read submission**, and the website will tell you if it has been submitted successfully. Now at the side of ENA the files and md5 sums will be checked. If that has occurred successfully (usually occuring over night) you're all set! At **Run files report** you can check the status of the files. 
