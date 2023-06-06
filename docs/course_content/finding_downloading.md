@@ -18,7 +18,7 @@ We probably want to search a bit more specific. Go to the [advanced search page]
 
 - Organism *Listeria monocytogenes*
 - Illumina whole genome sequencing
-- Host: cow (*Bos taurus*; lookup the taxonomy ID at [NCBI](https://www.ncbi.nlm.nih.gov/taxonomy))
+- Host: cow (*Bos taurus*)
 
 Build a query by selecting the boxes and selecting and specifying fields. Have a particular look at:
 
@@ -34,7 +34,7 @@ Build a query by selecting the boxes and selecting and specifying fields. Have a
 ??? success "Answer"
     Here's an example of a query you could end up with:
     ```
-    tax_eq(1639) AND host_tax_id=9913 AND instrument_platform="ILLUMINA" AND library_strategy="WGS"
+    tax_eq(1639) AND host_scientific_name="Bos taurus" AND instrument_platform="ILLUMINA" AND library_strategy="WGS"
     ```
 
 Ignore the other steps for now and click 'Search'. You will find the accession and the Run accession and the description of the run. 
@@ -64,5 +64,75 @@ You can change the results fields by going two steps back in the fields selectio
 
 Download the results as tsv. Are there many researchers that specified the serotype or strain? How about the isolation source?
 
-### Downloading data
+### Downloading data through ftp
 
+There are quite a few ways to download data from ENA/ISNDC:
+
+- Through FTP:
+    - From the command line with `wget` or `curl`
+    - With FileZilla
+- Through the command line with [SRA tools](https://github.com/ncbi/sra-tools/wiki) with `prefetch` and `fasterq-dump`
+- Via [SRA cloud delivery](https://www.ncbi.nlm.nih.gov/sra/docs/data-delivery/)
+
+!!! note "Nextflow pipeline"
+    With the nf-core pipeline [fetchngs](https://nf-co.re/fetchngs), it's easy to download sequencing reads from SRA/ENA and have them in the right format for downstream processing with other nf-core pipelines.
+
+In the exercises below we will use FileZilla to download some files of interest. 
+
+Make sure that you have specified `submitted_ftp` and `fastq_ftp` at *Fields*. After that, at *Results* download the report in tsv format (**Download report** > **TSV**). Open the downloaded TSV in your favourite spreadsheet program, and pick a sequencing run with both submitted data and fastq data available. For example, you can use `ERR10549500`. 
+
+!!! hint "File size"
+    In the exercises, you will download the files. Find a sequencing run that's not too big, to do that, you can include `submitted_bytes` and/or `fastq_bytes` at *Fields* 
+
+Now we'll browse the files with Filezilla. To do that we need the links provided at the columns `submitted_ftp` and `fastq_ftp`. The first part is the address to the FTP server: `ftp.sra.ebi.ac.uk`. To connect to that we make a connection with FileZilla:
+
+- **File** > **Site Manager..**
+- Click **New Site**
+- Give the connection a name e.g. 'ENA SRA'
+- Specify at **Host** `ftp.sra.ebi.ac.uk`
+- At **Logon Type** specify **Anonymous**
+
+<figure>
+    <img src="../../assets/images/filezilla_ena_download.png" width="500"/>
+</figure>
+
+Connect to the server. Now at the right panel you can browse to the paths in the links. To browse to the directory with the submitted data for `ERR10549405`, you can go to `/vol1/run/ERR105/ERR10549500/`. 
+
+**Exercise** For your sample of interest, download a submitted file and the SRA fastq file. What are the differences? 
+
+??? success "Answer"
+
+    The first eight lines of the SRA fastq file looks like this:
+
+    ```
+    @ERR10549500.1 NB502092:214:HCYYFAFX3:1:11101:10005:17165/1
+    AATTTCACCTTCATTAATAGATTTTTTTCTTTTAACGTCTTATAATGAAATGGAACCGAGAACATACGCGAATATGTTCTCGGCTCATTTCTAAGGATGACTACTGTAAAACATCTGAGCCCGAGAAGCTTTGGATTCGTTTGCACGGTTA
+    +
+    AAAAAE/A<EEEEEE/AA6EE6EEEE/EEEEEEEEEEEE//A/AAEAAEEE//AAEAEEAE/EEEEE<<E<EEE/<AAEEA/</6EE/</EEA/6/EEAEEAEE</EE<EEEEEEAAEA//66E<AAA<EE/<<<EE<A/<//6A/6/EE/
+    @ERR10549500.2 NB502092:214:HCYYFAFX3:1:11101:10012:8474/1
+    ATCCTTATCTAATCACTTCTATCGCTGTGTTCTACGATGATTTATACGCAGCAACAGAAGGCACTTTTACAGAAGAAACGGTCATCGTGGAAGAAGAAGTAAATCCATTTGGAACAACAGAAGCTGATCCATTTGCTGAAGATACACATC
+    +
+    AAAAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE<EEEEEAEEEEEEEAEEAEEEEEEEEEEEE/EEEEEEEEEEEEEEEEEEEEEAEAEEEEE<EEAEEEE<AEE/EE/EEEEAAE<
+    ```
+
+    While for the submitted file it looks like:
+
+    ```
+    @NB502092:214:HCYYFAFX3:1:11101:19008:1109 1:N:0:GCTCATGA+NTAGCCTT
+    GACTTNTTGGGATTAGTGAAGGGGCAATTCCTTTCGCGGTAGAATCTCCGCTTAAAGTTATTCCGGCTACGGTTCTTGGTTCTGCTGTCGGCGGGGCACTAGCTGTAGGTCTTGGCGCAATTAACCAAGCGCCAATCAGTGGTTTTTATGG
+    +
+    AAAAA#/EEAE6EEAEEE/EEEEAEE/AEEEEE/AAEE/AAEE/EEEEAAEAEEEEEEEEEEEEEEAEEEEEEEEEEEEEEEEEEEAAEEE<EEEEEEEEEEEE/E<EE/AEE<EEEEAEEEE/EEE/AEEEEEA<EAEEAEE/E<E/EA<
+    @NB502092:214:HCYYFAFX3:1:11101:9681:1109 1:N:0:GCTCATGA+NTAGCCTT
+    GACTGNACAGATGTGCCGATGTTTGTTAAACAAGGTGCCATTATGCCAATGCAACAACCACAAAACTATGTTGGCGAATCCGCAGTCAAAACAATTTATTTAGACACTTTTGCATCAGATAAAGAGACATCCTTTACACATTACGATGACG
+    +
+    AAAAA#EAEEEEEEEEEEEEEEEEEEEEEEEEEEEAEAEEEEEEEE/E/EEEEEEE/EEEEEEEEEEAAEAEEEEEEEEE6EEEEEEEEAAEEE/EEE/E<AAAE/A<<EEEAEA6EEAEEEEEAEEEE/AEEEEAE/AEAAE<AEAAAA<
+    ```
+
+    So, apparantly both the order and the titles are different. They both have the same number of reads:
+
+    ```sh
+    gunzip -c ERR10549500_1.fastq.gz| wc -l
+    gunzip -c DTU_2022_1015394_2_SI_JC98_R1_001.fq.gz| wc -l
+    ```
+
+    Both return 3657672
