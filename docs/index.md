@@ -13,6 +13,12 @@
 
 After this course, you will be able to:
 
+- Understand the main data structures underlying ENA and the Sequence Read Archive (SRA)
+- Find an appropriate portal for submitting and finding the most common data types related to raw NGS data
+- Use the web interfaces and command line to find and download raw sequencing data from SRA
+- Use the command line or FileZilla to upload files with ftp
+- Successfully submit the most common data types to ENA
+
 ### Learning outcomes explained
 
 To reach the general learning outcomes above, we have set a number of smaller learning outcomes. Each chapter starts with these smaller learning outcomes. Use these at the start of a chapter to get an idea what you will learn. Use them also at the end of a chapter to evaluate whether you have learned what you were expected to learn.
