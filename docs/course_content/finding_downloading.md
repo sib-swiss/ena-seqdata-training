@@ -27,7 +27,7 @@ Build a query by selecting the boxes and selecting and specifying fields. Have a
 - Sequencing information
 
 !!! hint 
-    Find the description of all possible fields [here]([here](../assets/ENA%20Portal%20API%20-%20enaPortalAPI-doc-1.pdf)). 
+    Find the description of all possible fields [here]([here](../assets/ena_api_docs.pdf)). 
 
  You'll notice that a search query will appear at the top of the page. What does your query look like?
 
@@ -53,7 +53,7 @@ Ignore the other steps for now and click 'Search'. You will find the accession a
 
 You can change the results fields by going two steps back in the fields selection page. 
 
-**Exercise**: Navigate to the 'Fields' page, and select **Manually select fields** to select fields that interest you and correspond to the required information in the answer above. Find all field descripts [here](../assets/ENA%20Portal%20API%20-%20enaPortalAPI-doc-1.pdf).
+**Exercise**: Navigate to the 'Fields' page, and select **Manually select fields** to select fields that interest you and correspond to the required information in the answer above. Find all field descripts [here](../assets/ena_api_docs.pdf).
 
 ??? success "Answer"
     Here's an example of the fields you could have selected:
