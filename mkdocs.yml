@@ -7,7 +7,6 @@ nav:
       - Introduction: course_content/introduction.md
       - Finding and downloading: course_content/finding_downloading.md
       - Submitting: course_content/submitting.md
-      - Webin CLI: course_content/webin_cli.md
 
 theme:
   name: material
