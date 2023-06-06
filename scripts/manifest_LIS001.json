@@ -1,0 +1,25 @@
+{
+  "study": "PRJEB62850",
+  "sample": "ERS15567929",
+  "name": "LIS001",
+  "platform": "ILLUMINA",
+  "instrument": "Illumina MiSeq",
+  "libraryName": "LIS001",
+  "library-source": "GENOMIC",
+  "library_selection": "RANDOM",
+  "libraryStrategy": "WGS",
+  "fastq": [
+    {
+      "value": "LIS001_R1.fastq.gz",
+      "attributes": {
+        "read_type": "paired"
+      }
+    },
+    {
+      "value": "LIS001_R2.fastq.gz",
+      "attributes": {
+        "read_type": "paired"
+      }
+    }
+  ]
+}

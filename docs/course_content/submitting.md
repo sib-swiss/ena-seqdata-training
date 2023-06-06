@@ -102,9 +102,108 @@ You have probably seen the fields 'forward_file_md5' and 'reverse_file_md5'. md5
     CertUtil -hashfile LIS002_R2.fastq.gz MD5
     ```
 
-**Exercise**: download the template and fill out the required information. Check the field description and permitted values in the template description. 
+**Exercise**: download the template and fill out the required information.  Check the field description and permitted values in the template description. You can also find an overview of permitted values [here](https://ena-docs.readthedocs.io/en/latest/submit/reads/webin-cli.html#metadata-validation).
 
 ??? success "Answer"
     You can find a 'correctly' filled out table [here](../assets/tsv/fastq2_template.tsv). 
 
 Now you can upload the file at **Upload filled spreadsheet template for Read submission**, and the website will tell you if it has been submitted successfully. Now at the side of ENA the files and md5 sums will be checked. If that has occurred successfully (usually occuring over night) you're all set! At **Run files report** you can check the status of the files. 
+
+### Extra: submit with webin CLI
+
+Submission though webin CLI requires the same steps for registering a study and registering samples. However, the process of submitting the reads is done programatically. A general overview on how to use Webin CLI for reads can be at the [ENA docs](https://ena-docs.readthedocs.io/en/latest/submit/reads/webin-cli.html). 
+
+To do these exercises, follow [these instructions](https://ena-docs.readthedocs.io/en/latest/submit/general-guide/webin-cli.html) to install Webin CLI locally. 
+
+Submitting with Webin-CLI starts with creating a json manifest file, in which you specify the metdata associated with your reads. This metadata json basically contains the same information as in the read submission template that we have created above. Here's an mostly empty example:
+
+```json title="manifest.json"
+{
+    "study": "PRJEB00000",
+    "sample": "ERS00000000",
+    "name": "",
+    "platform": "",
+    "instrument": "",
+    "libraryName": "",
+    "library-source": "",
+    "library_selection": "",
+    "libraryStrategy": "",
+    "fastq": [
+
+      {
+        "value": "LIS001_R1.fastq.gz",
+        "attributes": {
+          "read_type": "paired"
+        }
+      },
+      {
+        "value": "LIS001_R2.fastq.gz",
+        "attributes": {
+          "read_type": "paired"
+        }
+      }
+    ]
+   }
+```
+
+!!! note "Creating json files"
+    Typically such a json files is generated programmatically with e.g. R or python. 
+
+**Exercise** fill out this json for the reads associated with LIS001. Use the [ENA docs](https://ena-docs.readthedocs.io/en/latest/submit/reads/webin-cli.html#metadata-validation) to find the permitted values. 
+
+??? success "Answer"
+    Here's an example. Note that `study` and `sample` are likely different for you. 
+
+    ```json title="manifest_LIS001.json"
+    {
+    "study": "PRJEB62850",
+    "sample": "ERS15567929",
+    "name": "LIS001",
+    "platform": "ILLUMINA",
+    "instrument": "Illumina MiSeq",
+    "libraryName": "LIS001",
+    "library-source": "GENOMIC",
+    "library_selection": "RANDOM",
+    "libraryStrategy": "WGS",
+    "fastq": [
+        {
+        "value": "LIS001_R1.fastq.gz",
+        "attributes": {
+            "read_type": "paired"
+        }
+        },
+        {
+        "value": "LIS001_R2.fastq.gz",
+        "attributes": {
+            "read_type": "paired"
+        }
+        }
+    ]
+    }
+    ```
+
+Now, we can use Webin CLI to validate and submit the reads. On a UNIX-based system it would look like this:
+
+```sh
+java -jar webin-cli-6.4.1.jar \
+    -context reads \
+    -userName Webin-XXXXX \
+    -password "$WEBIN_PW" \
+    -manifest manifest.json \
+    -outputDir . \
+    -validate \
+    -submit \
+    -test
+```
+
+**Exercise** Make sure that you have the webin-cli executable, manifest file and reads are in the same directory and run the command. 
+
+!!! hint
+    You can store you password in a variable like this:
+
+    ```sh
+    export WEBIN_PW=mywebinpassword
+    ```
+
+!!! warning
+    Make sure to add the `-test` option, otherwise Webin CLI will try to submit your reads!

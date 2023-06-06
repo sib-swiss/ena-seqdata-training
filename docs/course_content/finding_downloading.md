@@ -132,7 +132,17 @@ Connect to the server. Now at the right panel you can browse to the paths in the
 
     ```sh
     gunzip -c ERR10549500_1.fastq.gz| wc -l
-    gunzip -c DTU_2022_1015394_2_SI_JC98_R1_001.fq.gz| wc -l
+    gunzip -c DTU_2022_1015394_2_SI_JC98_R1_001.fq.gz | wc -l
     ```
 
     Both return 3657672
+
+!!! note "Using `wget`"
+    Of course, if you have a lot of runs you need to download, or if you are downloading to e.g. a remote cluster with only a commmand line interface, you can use `wget` or `curl`. For our exercise, the commands for `wget` would look like this:
+
+    ```sh
+    # SRA fastq
+    wget ftp.sra.ebi.ac.uk/vol1/fastq/ERR105/000/ERR10549500/ERR10549500_1.fastq.gz
+    # submitted fastq
+    wget ftp.sra.ebi.ac.uk/vol1/run/ERR105/ERR10549500/DTU_2022_1015394_2_SI_JC98_R1_001.fq.gz
+    ```
