@@ -1,7 +1,7 @@
 
 
 !!! example "Our story"
-    Our project **Genetic variation of listeria in the cow brain** has the aim to gain knowledge about the genetic variability of listeria. At the start of the project, we want to know what kind of data is already available, and see whether we can re-analyze it to understand the genetic variation of *Listeria monocytogenes* associated with cows.
+    Our project **Genetic variation of listeria in cow** has the aim to gain knowledge about the genetic variability of listeria. At the start of the project, we want to know what kind of data is already available, and see whether we can re-analyze it to understand the genetic variation of *Listeria monocytogenes* associated with cows.
 
 ## Exercises
 
@@ -20,14 +20,14 @@ We probably want to search a bit more specific. Go to the [advanced search page]
 - Illumina whole genome sequencing
 - Host: cow (*Bos taurus*)
 
-Build a query by selecting the boxes and selecting and specifying fields. Have a particular look at:
+Build a query by selecting the boxes and selecting and specifying fields. At **Data Type** specify *Raw Reads*. At **Query** have a particular look at:
 
 - Taxonomy and related
 - Host information
 - Sequencing information
 
 !!! hint 
-    Find the description of all possible fields [here]([here](../assets/ena_api_docs.pdf)). 
+    Find the description of all possible fields [here](../assets/ena_api_docs.pdf). 
 
  You'll notice that a search query will appear at the top of the page. What does your query look like?
 
@@ -39,7 +39,7 @@ Build a query by selecting the boxes and selecting and specifying fields. Have a
 
 Ignore the other steps for now and click 'Search'. You will find the accession and the Run accession and the description of the run. 
 
-**Exercise:** What kind of other information would you want to evaluate our search? 
+**Exercise:** We want to validate the sequencing runs that appear after our search. What kind of other information would you want to evaluate our search? 
 
 ??? success "Answer"
     Some information that might be nice:
@@ -47,6 +47,7 @@ Ignore the other steps for now and click 'Search'. You will find the accession a
     - To which original study and sample the run belongs
     - The host information
     - Where to find the data files
+    - The size of the data files
     - Date of sampling/submission
     - The geographic origin
     - The strain/serotype
@@ -59,10 +60,10 @@ You can change the results fields by going two steps back in the fields selectio
     Here's an example of the fields you could have selected:
 
     ```
-    study_accession,library_selection,country,collection_date,first_public,strain,host,host_status,isolation_source,serotype,submitted_ftp,fastq_ftp
+    study_accession,library_selection,country,collection_date,first_public,strain,host,host_status,isolation_source,serotype,submitted_ftp,submitted_bytes,fastq_ftp,fastq_bytes
     ```
 
-Download the results as tsv. Are there many researchers that specified the serotype or strain? How about the isolation source?
+Download the results as tsv (**Download report** > **TSV**). Are there many researchers that specified the serotype or strain? How about the isolation source?
 
 ### Downloading data through ftp
 
@@ -96,7 +97,7 @@ Now we'll browse the files with Filezilla. To do that we need the links provided
     <img src="../../assets/images/filezilla_ena_download.png" width="500"/>
 </figure>
 
-Connect to the server. Now at the right panel you can browse to the paths in the links. To browse to the directory with the submitted data for `ERR10549405`, you can go to `/vol1/run/ERR105/ERR10549500/`. 
+Connect to the server. Now at the right panel you can browse to the paths in the links (i.e. the part after `ftp.sra.ebi.ac.uk` in the links at the table). To browse to the directory with the submitted data for `ERR10549405`, you can go to `/vol1/run/ERR105/ERR10549500/`. 
 
 **Exercise** For your sample of interest, download a submitted file and the SRA fastq file. What are the differences? 
 
