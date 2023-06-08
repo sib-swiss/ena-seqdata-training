@@ -7,6 +7,11 @@
 * Google doc (through mail)
 * [Slack channel](https://slack.com)
 
+This course has made use of the following existing material:
+
+- [NBIS DM practices course material](https://nbisweden.github.io/module-repository-submission-dm-practices/04-exercise-ENA-submission/index.html)
+- [ENA documentation](https://ena-docs.readthedocs.io/en/latest/index.html)
+
 ## Learning outcomes
 
 ### General learning outcomes
