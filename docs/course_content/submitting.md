@@ -4,11 +4,11 @@
 [:fontawesome-solid-file-pdf: Download the presentation](../assets/pdf/metadata_and_submitting_sequences.pdf){: .md-button }
 
 !!! example "Our story"
-    Our project **Genetic variation of listeria in the cow brain** has the aim to gain knowledge about the genetic variability of listeria. As a first step, we isolated *Listeria monocytogenes* from two different cow milk samples (sample LIS001 and LIS002). The milk was collected at January 2022 at two dairy farms, one near Bern (CH), and the other near Fribourg (CH). We received them on February 2nd of the same year in our lab. By whole genome sequencing we found out that LIS001 belongs to serotype 4b and LIS002 to serotype 1/2b. We performed paired-end sequencing on an Illumina MiSeq (2 x 150 bp) on DNA extracted from both isolates. You can find the raw reads [here](https://ena-seqdata-training.s3.eu-central-1.amazonaws.com/listeria_reads.tar.gz). 
+    Our project **Genetic variation of listeria in cow** has the aim to gain knowledge about the genetic variability of listeria. As a first step, we isolated *Listeria monocytogenes* from two different cow milk samples (sample LIS001 and LIS002). The milk was collected at January 2022 at two dairy farms, one near Bern (CH), and the other near Fribourg (CH). We received them on February 2nd of the same year in our lab. By whole genome sequencing we found out that LIS001 belongs to serotype 4b and LIS002 to serotype 1/2b. We performed paired-end sequencing on an Illumina MiSeq (2 x 150 bp) on DNA extracted from both isolates. You can find the raw reads [here](https://ena-seqdata-training.s3.eu-central-1.amazonaws.com/listeria_reads.tar.gz). 
 
 ## Exercises
 
-You are asked to submit the reads to a repository EBI. First, figure out what the best submission strategy is at the [submission wizard](https://www.ebi.ac.uk/submission/). 
+You are asked to submit the reads to a repository at EBI. First, figure out what the best submission strategy is at the [submission wizard](https://www.ebi.ac.uk/submission/). 
 
 ??? success "Answer"
     After answering the questions, you probably conclude you should submit to [ENA](https://www.ebi.ac.uk/ena/browser/submit). 
