@@ -1,7 +1,7 @@
 
 | start 	| end   	| topic                                               	|
 |-------	|-------	|-----------------------------------------------------	|
-| 09:15 	| 09:45 	| [Introductions](course_content/introduction.md)                                       	|
+| 09:00 	| 09:45 	| [Introductions](course_content/introduction.md)                                       	|
 | 09:45 	| 10:30 	| Lecture: [Introduction to raw sequence databases](course_content/introduction.md)     	|
 | 10:30 	| 11:00 	| Break                                               	|
 | 11:00 	| 12:00 	| Exercise: [finding and downloading raw sequence data](course_content/finding_downloading.md) 	|
