@@ -1,4 +1,0 @@
-FileType	fastq	Read submission file type									
-sample	study	instrument_model	library_name	library_source	library_selection	library_strategy	library_layout	forward_file_name	forward_file_md5	reverse_file_name	reverse_file_md5
-ERS14895757	PRJEB61275	Illumina MiSeq	LIS001	GENOMIC	RANDOM	WGS	PAIRED	LIS001_R1.fastq.gz	022f87beb19995ab23e997c3fb29de50	LIS001_R2.fastq.gz	26b9f1c03b940fd924f44d9a6ef89573
-ERS14895756	PRJEB61275	Illumina MiSeq	LIS002	GENOMIC	RANDOM	WGS	PAIRED	LIS002_R1.fastq.gz	dbe4eb52da285eac77252307ed85b514	LIS002_R2.fastq.gz	e042872b49828cf6e7f7f79159fc40ed
