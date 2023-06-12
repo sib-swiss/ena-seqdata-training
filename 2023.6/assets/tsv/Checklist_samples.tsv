@@ -1,0 +1,5 @@
+Checklist	ERC000028	ENA prokaryotic pathogen minimal sample checklist									
+tax_id	scientific_name	sample_alias	sample_title	sample_description	isolation_source	collection date	geographic location (country and/or sea)	host health state	host scientific name	isolate	serovar
+#units	 	 	 	 	 	 	 	 	 	 	 
+1639	Listeria monocytogenes	LIS001	LIS001	Isolate of listeria	Listeria from cow brain	2022-01	Switzerland	Diseased	Bos taurus	LIS001	4b
+1639	Listeria monocytogenes	LIS002	LIS002	Isolate of listeria	Listeria from cow brain	2022-01	Switzerland	Diseased	Bos taurus	LIS002	1/2b
