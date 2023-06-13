@@ -4,4 +4,4 @@ Participants are expected to have basic knowledge on common next generation sequ
 
 ## Technical
 
-Participants are required to bring their own personal computer with FileZilla pre-installed.
+Participants are required to bring their own personal computer with FileZilla pre-installed. Participants need to create a **Webin account** no later than **one day before** the course. 

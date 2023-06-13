@@ -6,6 +6,9 @@
 !!! example "Our story"
     Our project **Genetic variation of listeria in cow** has the aim to gain knowledge about the genetic variability of listeria. As a first step, we isolated *Listeria monocytogenes* from two different cow milk samples (sample LIS001 and LIS002). The milk was collected at January 2022 at two dairy farms, one near Bern (CH), and the other near Fribourg (CH). We received them on February 2nd of the same year in our lab. By whole genome sequencing we found out that LIS001 belongs to serotype 4b and LIS002 to serotype 1/2b. We performed paired-end sequencing on an Illumina MiSeq (2 x 150 bp) on DNA extracted from both isolates. You can find the raw reads [here](https://ena-seqdata-training.s3.eu-central-1.amazonaws.com/listeria_reads.tar.gz). 
 
+!!! warning "Webin account"
+    These exercises only work with Webin accounts that are **more than one day old**. Webin accounts created on the same day will not be able to perform the submission. 
+
 ## Exercises
 
 You are asked to submit the reads to a repository at EBI. First, figure out what the best submission strategy is at the [submission wizard](https://www.ebi.ac.uk/submission/). 
