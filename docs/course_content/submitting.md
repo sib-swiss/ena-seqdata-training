@@ -16,10 +16,10 @@ You are asked to submit the reads to a repository at EBI. First, figure out what
 ??? success "Answer"
     After answering the questions, you probably conclude you should submit to [ENA](https://www.ebi.ac.uk/ena/browser/submit). 
 
-If you haven't already got one, make a [Webin account](https://www.ebi.ac.uk/ena/submit/webin/login). After the creation of the Webin account we will continue in the dev environment at [https://wwwdev.ebi.ac.uk/ena/browser/home](https://wwwdev.ebi.ac.uk/ena/browser/home). 
+If you haven't already got one, make a [Webin account](https://www.ebi.ac.uk/ena/submit/webin/login). After the creation of the Webin account we will continue in the dev environment at [https://wwwdev.ebi.ac.uk/ena/submit/webin/login](https://wwwdev.ebi.ac.uk/ena/submit/webin/login). 
 
 !!! warning "From now on dev environment!"
-    Make sure you use the dev environment [https://wwwdev.ebi.ac.uk/ena/browser/home](https://wwwdev.ebi.ac.uk/ena/browser/home). Otherwise the reads will be submitted and stay at ENA!
+    Make sure you use the dev environment [https://wwwdev.ebi.ac.uk/ena/submit/webin/login](https://wwwdev.ebi.ac.uk/ena/submit/webin/login). Otherwise the reads will be submitted and stay at ENA!
 
 We will follow the route **Submit to ENA using the Webin Portal**, which requires four steps. 
 
@@ -28,7 +28,7 @@ We will follow the route **Submit to ENA using the Webin Portal**, which require
 A study (or project) is an entity describing a research project. Typically this is at the level of a research grant. This make it e.g. easy to find data from multiple experiments from the same study. Click on **Register study** and fill out the form for the project described above. 
 
 !!! note 
-    The descriptions do not have to belong for this example. Typically, you can copy-paste this information from e.g. the research proposal. 
+    The descriptions do not have to be long for this example. Typically, you can copy-paste this information from e.g. the research proposal. 
 
 ### 2. Register samples
 
