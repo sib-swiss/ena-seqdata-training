@@ -1,1 +1,14 @@
-[{"version": "2023.6", "title": "2023.6", "aliases": ["latest"]}]
+[
+  {
+    "version": "2024.6",
+    "title": "2024.6",
+    "aliases": [
+      "latest"
+    ]
+  },
+  {
+    "version": "2023.6",
+    "title": "2023.6",
+    "aliases": []
+  }
+]
